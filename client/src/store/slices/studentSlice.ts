@@ -22,6 +22,17 @@ export const addStudent = createAsyncThunk(
     }
   }
 );
+export const deleteStudent = createAsyncThunk(
+  "deleteStudent",
+  async (id: number | string) => {
+    try {
+      await axios.delete(` http://localhost:8080/students/${id}`);
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 const studentSlice = createSlice({
   name: "student",
   initialState: {
@@ -39,6 +50,11 @@ const studentSlice = createSlice({
       })
       .addCase(addStudent.fulfilled, (state: any, action) => {
         state.student = [...state.student, action.payload];
+      })
+      .addCase(deleteStudent.fulfilled, (state: any, action) => {
+        state.student = state.student.filter(
+          (item: Student) => item.id != action.payload
+        );
       });
   },
 });

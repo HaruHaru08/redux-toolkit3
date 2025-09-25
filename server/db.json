@@ -19,22 +19,10 @@
       "grade": "10A3"
     },
     {
-      "name": "Việt Anh",
-      "age": 16,
-      "grade": "10A5",
-      "id": 4
-    },
-    {
       "name": "Thái Sơn",
       "age": 16,
       "grade": "10D1",
       "id": 5
-    },
-    {
-      "name": "Hùng",
-      "age": 18,
-      "grade": "10A6",
-      "id": 6
     }
   ]
 }

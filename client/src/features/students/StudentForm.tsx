@@ -24,16 +24,10 @@ interface Props {
   }) => void;
 }
 
-const StudentForm: React.FC<Props> = ({
-  open,
-  initial = {},
-  onClose,
-  onSubmit,
-}) => {
+const StudentForm: React.FC<Props> = ({ open, initial = {}, onClose }) => {
   const [name, setName] = useState(initial.name ?? "");
   const [age, setAge] = useState(initial.age ?? 16);
   const [grade, setGrade] = useState(initial.grade ?? "");
-
   useEffect(() => {
     setName(initial.name ?? "");
     setAge(initial.age ?? 16);

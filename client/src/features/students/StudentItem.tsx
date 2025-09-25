@@ -1,8 +1,8 @@
-import { Card, CardContent, IconButton, Typography } from '@mui/material';
-import { Delete, Edit } from '@mui/icons-material';
+import { Card, CardContent, IconButton, Typography } from "@mui/material";
+import { Delete, Edit } from "@mui/icons-material";
 
-import React from 'react';
-import type { Student } from './types';
+import React from "react";
+import type { Student } from "./types";
 
 interface Props {
   student: Student;
@@ -24,7 +24,11 @@ const StudentItem: React.FC<Props> = ({ student, onEdit, onDelete }) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <IconButton size="small" onClick={() => onEdit(student)} aria-label="edit">
+          <IconButton
+            size="small"
+            onClick={() => onEdit(student)}
+            aria-label="edit"
+          >
             <Edit fontSize="small" />
           </IconButton>
           <IconButton

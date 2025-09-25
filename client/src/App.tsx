@@ -6,7 +6,7 @@ import StudentForm from "./features/students/StudentForm";
 import StudentList from "./features/students/StudentList";
 import StudentSearchSortFilter from "./features/students/StudentSearchSortFilter";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllStudent } from "./store/slices/studentSlice";
+import { deleteStudent, getAllStudent } from "./store/slices/studentSlice";
 
 const App: React.FC = () => {
   // const [students, setStudents] = useState<Student[]>(initialData);
@@ -67,8 +67,7 @@ const App: React.FC = () => {
 
   const handleDelete = (id: string) => {
     if (!confirm("Xác nhận xóa học sinh?")) return;
-    id;
-    // setStudents((prev) => prev.filter((p) => p.id !== id));
+    dispatch(deleteStudent(id));
   };
 
   const handleClearFilters = () => {
